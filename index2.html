@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+	crossorigin="" />
+<title>Parque Burle Marx</title>
+<style>
+#mapid {
+	height: 600px;
+}
+
+nav {
+	margin-bottom: 20px;
+}
+</style>
+</head>
+<body>
+	<div class="container">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<a class="navbar-brand" href="#">Parque Burle Marx</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav">
+					<li class="nav-item active">
+						<a class="nav-link" href="#">
+							O quê acontece
+							<span class="sr-only">(current)</span>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Questionário</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Sobre</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+
+		<div class="row">
+			<div class="col">
+				<div id="mapid"></div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<div id="conteudo">
+					<div class="modal fade" id="um" tabindex="-1" role="dialog" aria-hidden="true">
+						<div class="modal-dialog modal-dialog-centered" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title">Projeto original</h5>
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>
+								<div class="modal-body">
+									<figure class="figure">
+										<img src="img/um.jpeg" class="figure-img img-fluid rounded">
+										<figcaption class="figure-caption">A caption for the above image.</figcaption>
+									</figure>								
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>					
+								</div>
+							</div>
+						</div>
+					</div>						
+					<div class="modal fade" id="dois" tabindex="-1" role="dialog" aria-hidden="true">
+						<div class="modal-dialog modal-dialog-centered" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title">Evento: Expobr - Exposição de plantas nativas do cerrado</h5>
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>
+								<div class="modal-body">
+									<figure class="figure">
+										<img src="img/dois.png" class="figure-img img-fluid rounded">
+										<figcaption class="figure-caption">
+											Nome do Espaço: Jardim Botânico Burle Max - Espaço criado para homenagear a vida e obra de Roberto Burle Marx.
+											De 01/11 a 17/11 das 08:00 às 22:00.
+										</figcaption>
+									</figure>								
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>					
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="modal fade" id="tres" tabindex="-1" role="dialog" aria-hidden="true">
+						<div class="modal-dialog modal-dialog-centered" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title">Evento: Semana Ecológica e Sustentável - Palestra para adoção de medidas sustetável para a coleta de lixo seletiva e compostagem.</h5>
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>
+								<div class="modal-body">
+									<figure class="figure">
+										<img src="img/tres.png" class="figure-img img-fluid rounded">
+										<figcaption class="figure-caption">
+											Nome do Espaço: Praça Viva o Povo Brasileiro - 90 mil metros quadrados sendo uma área destinada a eventos culturais, feiras e manifestações históricas bem como discussão de assuntos ecológicos e sustentáveis.
+											Dia 06/11 as 20:00.
+										</figcaption>
+									</figure>								
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>					
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="modal fade" id="quatro" tabindex="-1" role="dialog" aria-hidden="true">
+						<div class="modal-dialog modal-dialog-centered" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title">Evento: Ciclo bsb - Circuito Noturno de ciclismo em Brasília</h5>
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>
+								<div class="modal-body">
+									<figure class="figure">
+										<img src="img/quatro.png" class="figure-img img-fluid rounded">
+										<figcaption class="figure-caption">
+											Nome do espaço: Ciclovias, saída do portão 3.
+											Dias 08, 09 e 10 de novembro as 21:00.
+										</figcaption>
+									</figure>								
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>					
+								</div>
+							</div>
+						</div>
+					</div>					
+					<div class="modal fade" id="cinco" tabindex="-1" role="dialog" aria-hidden="true">
+						<div class="modal-dialog modal-dialog-centered" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title">Estacionamentos</h5>
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>
+								<div class="modal-body">
+									<figure class="figure">
+										<img src="img/cinco.jpg" class="figure-img img-fluid rounded">
+										<figcaption class="figure-caption">
+										Nome do Espaço: Estacionamento Inteligente - Desenvolvido com sensores que permitem a visualização de vagas disponíveis nos 17 espaços destinados a estacionamento no parque Burle Marx. O estacionamento inteligente diminui a emissão de Co2 no ar pois, o motorista não precisará circular a procura de vagas dentro do parque. Haverá a presença
+										de câmeras instaladas estrategicamente em alguns pontos a fim de promover a segurança inteligente.
+										</figcaption>
+									</figure>								
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>					
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="modal fade" id="seis" tabindex="-1" role="dialog" aria-hidden="true">
+						<div class="modal-dialog modal-dialog-centered" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title">Evento: Música e Violão - Evento que receberá músicos de Brasília.</h5>
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>
+								<div class="modal-body">
+									<figure class="figure">
+										<img src="img/seis.png" class="figure-img img-fluid rounded">
+										<figcaption class="figure-caption">
+											Nome do Espaço: Praça das Sombras - O espaço será montado com estruturas em bambú provocando um efeito de luz e sobra.
+											Dias 04 e 25 de novembro, em dois horários: 12:00 e 20:00.
+										</figcaption>
+									</figure>								
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>					
+								</div>
+							</div>
+						</div>
+					</div>			
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
+	<script src="js/leaflet-color-markers.js"></script>
+	<script>
+		var popup;
+		var camadaBase = criarCamadaBase();
+		var camadaDeEventos = criarCamadaDeEventos();
+		var camadaDeEstacionamentos = criarCamadaDeEstacionamentos();
+		var camadaDeEspacos = criarCamadaDeEspacos();
+		var mymap = L.map('mapid', {layers : [ camadaBase ] }).fitBounds([ [ -15.7357, -47.9103 ], [ -15.7736, -47.8938 ] ]);
+
+		L.control.layers({
+			"<strong>Parque Burle Marx</strong>" : camadaBase
+		}, {
+			"Eventos" : camadaDeEventos,
+			"Estacionamentos" : camadaDeEstacionamentos,
+			"Espaços de Convivência" : camadaDeEspacos
+		}).addTo(mymap);
+
+		coordenadas();
+
+		function coordenadas() {
+			popup = L.popup();
+
+			mymap.on('click', function(e) {
+				popup.setLatLng(e.latlng).setContent(e.latlng.toString()).openOn(mymap);
+			});
+		}
+
+		function criarCamadaBase() {
+			var mbAttr = 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, '
+					+ '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, '
+					+ 'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>', mbUrl = 'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw';
+
+			return L.tileLayer(mbUrl, {
+				id : 'mapbox.streets',
+				attribution : mbAttr
+			});
+		}
+
+		function criarCamadaDeEspacos() {
+			return L.layerGroup([
+					criarMarcador('Área de Preservação', 'um', orangeIcon,-15.740875, -47.907779),
+					criarMarcador('Museu Vivo do Cerrado', 'um', orangeIcon, -15.748186, -47.903719),
+					criarMarcador('Jardim Burle Marx', 'um', orangeIcon, -15.748207, -47.906057),
+					criarMarcador('Espaço Bienal e Krajcberg', 'um', orangeIcon, -15.749033, -47.905928),
+					criarMarcador('Oásis', 'um', orangeIcon, -15.755952, -47.905587),
+					criarMarcador('Administração', 'um', orangeIcon, -15.756292, -47.907751),
+					criarMarcador('Viva o Povo', 'um', orangeIcon, -15.759834, -47.90396),
+					criarMarcador('Oásis', 'um', orangeIcon, -15.765079, -47.9007),
+					criarMarcador('Praça da Sombra', 'um', orangeIcon, -15.767764, -47.901129) ]);
+		}
+
+		function criarCamadaDeEstacionamentos() {
+			return L.layerGroup([
+					criarMarcador('Estacionamento 1', 'cinco', redIcon, -15.760825, -47.900115),
+					criarMarcador('Estacionamento 2', 'cinco', redIcon, -15.767929, -47.900566),
+					criarMarcador('Estacionamento 3', 'cinco', redIcon, -15.768487, -47.906678),
+					criarMarcador('Estacionamento 4', 'cinco', redIcon, -15.756902, -47.90743),
+					criarMarcador('Estacionamento 5', 'cinco', redIcon, -15.747897, -47.908373),
+					criarMarcador('Estacionamento 6', 'cinco', redIcon, -15.742032, -47.905156) ]);
+		}
+
+		function criarCamadaDeEventos() {
+			return L.layerGroup([
+					criarMarcador('Expobr', 'dois', blueIcon, -15.748352, -47.906017),
+					criarMarcador('Semana Ecológica e Sustentável', 'tres', blueIcon, -15.760144, -47.90402),
+					criarMarcador('Ciclo bsb', 'quatro', blueIcon, -15.746452, -47.903916),
+					criarMarcador('Música e Violão', 'seis', blueIcon, -15.767805, -47.900738) ]);
+		}
+
+		function criarMarcador(titulo, ele, icone, latitude, longitude) {
+			return L.marker([ latitude, longitude ], {icon : icone})
+			 			.bindPopup('<span data-ele="' + ele + '">' + titulo + '</span>', {closeButton : false, closeOnClick : true})
+						.on('click',
+							function(e) {
+								$('#conteudo').find('div.card').hide();
+								$('#'+ $(e.target.getPopup().getContent()).data('ele')).modal();
+							});
+		}
+	</script>
+</body>
+</html>
