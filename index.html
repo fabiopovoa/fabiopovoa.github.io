@@ -12,45 +12,73 @@
 	crossorigin="" />
 <title>Parque Burle Marx</title>
 <style>
-#mapid {
-	height: 600px;
+.navbar {
+	background-color: #acc4ce;
+	margin-bottom: 1px;
 }
 
-nav {
-	margin-bottom: 20px;
+.navbar-light .navbar-brand {
+	color: #FFFFFF;
+	font-weight: bold;
+}
+
+.navbar-light .navbar-nav .active>.nav-link {
+	color: #FFFFFF;
+	font-weight: bold;
+}
+
+.navbar-light .navbar-nav .nav-link {
+	color: rgba(255, 255, 255, .8);
+}
+
+.navbar-light .navbar-toggler {
+	border-color: rgba(255, 255, 255, .5);
+	color: #FFFFFF;
+}
+
+.navbar-light .navbar-toggler .navbar-toggler-icon {
+	color: #FFFFFF;
+}
+
+#mapid {
+	position: fixed;
+	height: 100%;
+	width: 100%;
+}
+
+.modal-header {
+	background-color: #81ada0;
+	color: #FFFFFF;
 }
 </style>
 </head>
 <body>
-	<div class="container">
-		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-			<a class="navbar-brand" href="#">Parque Burle Marx</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarNav">
-				<ul class="navbar-nav">
-					<li class="nav-item active">
-						<a class="nav-link" href="#">
-							O quê acontece
-							<span class="sr-only">(current)</span>
-						</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">Questionário</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">Sobre</a>
-					</li>
-				</ul>
-			</div>
-		</nav>
-
-		<div class="row">
-			<div class="col">
-				<div id="mapid"></div>
-			</div>
+	<nav class="navbar navbar-expand-lg navbar-light">
+		<a class="navbar-brand" href="#">Parque Burle Marx</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav">
+				<li class="nav-item active">
+					<a class="nav-link" href="#">
+						O quê acontece
+						<span class="sr-only">(current)</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="https://goo.gl/forms/hEoDfBZheoHlWlF33">Questionário</a>
+				</li>
+				<!-- 
+				<li class="nav-item">
+					<a class="nav-link" href="#">Sobre</a>
+				</li>
+				 -->
+			</ul>
 		</div>
+	</nav>
+	<div>
+		<div id="mapid"></div>
 		<div class="row">
 			<div class="col">
 				<div id="conteudo">
@@ -66,15 +94,15 @@ nav {
 								<div class="modal-body">
 									<figure class="figure">
 										<img src="img/um.jpeg" class="figure-img img-fluid rounded">
-										<figcaption class="figure-caption">A caption for the above image.</figcaption>
-									</figure>								
+										<figcaption class="figure-caption">Detalhes do projeto original</figcaption>
+									</figure>
 								</div>
 								<div class="modal-footer">
-									<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>					
+									<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
 								</div>
 							</div>
 						</div>
-					</div>						
+					</div>
 					<div class="modal fade" id="dois" tabindex="-1" role="dialog" aria-hidden="true">
 						<div class="modal-dialog modal-dialog-centered" role="document">
 							<div class="modal-content">
@@ -87,14 +115,12 @@ nav {
 								<div class="modal-body">
 									<figure class="figure">
 										<img src="img/dois.png" class="figure-img img-fluid rounded">
-										<figcaption class="figure-caption">
-											Nome do Espaço: Jardim Botânico Burle Max - Espaço criado para homenagear a vida e obra de Roberto Burle Marx.
-											De 01/11 a 17/11 das 08:00 às 22:00.
-										</figcaption>
-									</figure>								
+										<figcaption class="figure-caption">Nome do Espaço: Jardim Botânico Burle Max - Espaço criado para homenagear a vida e obra de Roberto Burle Marx. De 01/11 a 17/11 das 08:00 às
+											22:00.</figcaption>
+									</figure>
 								</div>
 								<div class="modal-footer">
-									<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>					
+									<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
 								</div>
 							</div>
 						</div>
@@ -111,14 +137,12 @@ nav {
 								<div class="modal-body">
 									<figure class="figure">
 										<img src="img/tres.png" class="figure-img img-fluid rounded">
-										<figcaption class="figure-caption">
-											Nome do Espaço: Praça Viva o Povo Brasileiro - 90 mil metros quadrados sendo uma área destinada a eventos culturais, feiras e manifestações históricas bem como discussão de assuntos ecológicos e sustentáveis.
-											Dia 06/11 as 20:00.
-										</figcaption>
-									</figure>								
+										<figcaption class="figure-caption">Nome do Espaço: Praça Viva o Povo Brasileiro - 90 mil metros quadrados sendo uma área destinada a eventos culturais, feiras e manifestações
+											históricas bem como discussão de assuntos ecológicos e sustentáveis. Dia 06/11 as 20:00.</figcaption>
+									</figure>
 								</div>
 								<div class="modal-footer">
-									<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>					
+									<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
 								</div>
 							</div>
 						</div>
@@ -135,18 +159,15 @@ nav {
 								<div class="modal-body">
 									<figure class="figure">
 										<img src="img/quatro.png" class="figure-img img-fluid rounded">
-										<figcaption class="figure-caption">
-											Nome do espaço: Ciclovias, saída do portão 3.
-											Dias 08, 09 e 10 de novembro as 21:00.
-										</figcaption>
-									</figure>								
+										<figcaption class="figure-caption">Nome do espaço: Ciclovias, saída do portão 3. Dias 08, 09 e 10 de novembro as 21:00.</figcaption>
+									</figure>
 								</div>
 								<div class="modal-footer">
-									<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>					
+									<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
 								</div>
 							</div>
 						</div>
-					</div>					
+					</div>
 					<div class="modal fade" id="cinco" tabindex="-1" role="dialog" aria-hidden="true">
 						<div class="modal-dialog modal-dialog-centered" role="document">
 							<div class="modal-content">
@@ -159,14 +180,13 @@ nav {
 								<div class="modal-body">
 									<figure class="figure">
 										<img src="img/cinco.jpg" class="figure-img img-fluid rounded">
-										<figcaption class="figure-caption">
-										Nome do Espaço: Estacionamento Inteligente - Desenvolvido com sensores que permitem a visualização de vagas disponíveis nos 17 espaços destinados a estacionamento no parque Burle Marx. O estacionamento inteligente diminui a emissão de Co2 no ar pois, o motorista não precisará circular a procura de vagas dentro do parque. Haverá a presença
-										de câmeras instaladas estrategicamente em alguns pontos a fim de promover a segurança inteligente.
-										</figcaption>
-									</figure>								
+										<figcaption class="figure-caption">Nome do Espaço: Estacionamento Inteligente - Desenvolvido com sensores que permitem a visualização de vagas disponíveis nos 17 espaços
+											destinados a estacionamento no parque Burle Marx. O estacionamento inteligente diminui a emissão de Co2 no ar pois, o motorista não precisará circular a procura de vagas dentro do parque.
+											Haverá a presença de câmeras instaladas estrategicamente em alguns pontos a fim de promover a segurança inteligente.</figcaption>
+									</figure>
 								</div>
 								<div class="modal-footer">
-									<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>					
+									<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
 								</div>
 							</div>
 						</div>
@@ -183,18 +203,16 @@ nav {
 								<div class="modal-body">
 									<figure class="figure">
 										<img src="img/seis.png" class="figure-img img-fluid rounded">
-										<figcaption class="figure-caption">
-											Nome do Espaço: Praça das Sombras - O espaço será montado com estruturas em bambú provocando um efeito de luz e sobra.
-											Dias 04 e 25 de novembro, em dois horários: 12:00 e 20:00.
-										</figcaption>
-									</figure>								
+										<figcaption class="figure-caption">Nome do Espaço: Praça das Sombras - O espaço será montado com estruturas em bambú provocando um efeito de luz e sobra. Dias 04 e 25 de
+											novembro, em dois horários: 12:00 e 20:00.</figcaption>
+									</figure>
 								</div>
 								<div class="modal-footer">
-									<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>					
+									<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
 								</div>
 							</div>
 						</div>
-					</div>			
+					</div>
 				</div>
 			</div>
 		</div>
@@ -213,7 +231,9 @@ nav {
 		var camadaDeEventos = criarCamadaDeEventos();
 		var camadaDeEstacionamentos = criarCamadaDeEstacionamentos();
 		var camadaDeEspacos = criarCamadaDeEspacos();
-		var mymap = L.map('mapid', {layers : [ camadaBase ] }).fitBounds([ [ -15.7357, -47.9103 ], [ -15.7736, -47.8938 ] ]);
+		var mymap = L.map('mapid', {
+			layers : [ camadaBase ]
+		}).fitBounds([ [ -15.7357, -47.9103 ], [ -15.7736, -47.8938 ] ]);
 
 		L.control.layers({
 			"<strong>Parque Burle Marx</strong>" : camadaBase
@@ -223,13 +243,14 @@ nav {
 			"Espaços de Convivência" : camadaDeEspacos
 		}).addTo(mymap);
 
-		coordenadas();
+		//coordenadas();
 
 		function coordenadas() {
 			popup = L.popup();
 
 			mymap.on('click', function(e) {
-				popup.setLatLng(e.latlng).setContent(e.latlng.toString()).openOn(mymap);
+				popup.setLatLng(e.latlng).setContent(e.latlng.toString())
+						.openOn(mymap);
 			});
 		}
 
@@ -246,42 +267,72 @@ nav {
 
 		function criarCamadaDeEspacos() {
 			return L.layerGroup([
-					criarMarcador('Área de Preservação', 'um', orangeIcon,-15.740875, -47.907779),
-					criarMarcador('Museu Vivo do Cerrado', 'um', orangeIcon, -15.748186, -47.903719),
-					criarMarcador('Jardim Burle Marx', 'um', orangeIcon, -15.748207, -47.906057),
-					criarMarcador('Espaço Bienal e Krajcberg', 'um', orangeIcon, -15.749033, -47.905928),
-					criarMarcador('Oásis', 'um', orangeIcon, -15.755952, -47.905587),
-					criarMarcador('Administração', 'um', orangeIcon, -15.756292, -47.907751),
-					criarMarcador('Viva o Povo', 'um', orangeIcon, -15.759834, -47.90396),
-					criarMarcador('Oásis', 'um', orangeIcon, -15.765079, -47.9007),
-					criarMarcador('Praça da Sombra', 'um', orangeIcon, -15.767764, -47.901129) ]);
+					criarMarcador('Área de Preservação', 'um', orangeIcon,
+							-15.740875, -47.907779),
+					criarMarcador('Museu Vivo do Cerrado', 'um', orangeIcon,
+							-15.748186, -47.903719),
+					criarMarcador('Jardim Burle Marx', 'um', orangeIcon,
+							-15.748207, -47.906057),
+					criarMarcador('Espaço Bienal e Krajcberg', 'um',
+							orangeIcon, -15.749033, -47.905928),
+					criarMarcador('Oásis', 'um', orangeIcon, -15.755952,
+							-47.905587),
+					criarMarcador('Administração', 'um', orangeIcon,
+							-15.756292, -47.907751),
+					criarMarcador('Viva o Povo', 'um', orangeIcon, -15.759834,
+							-47.90396),
+					criarMarcador('Oásis', 'um', orangeIcon, -15.765079,
+							-47.9007),
+					criarMarcador('Praça da Sombra', 'um', orangeIcon,
+							-15.767764, -47.901129) ]);
 		}
 
 		function criarCamadaDeEstacionamentos() {
 			return L.layerGroup([
-					criarMarcador('Estacionamento 1', 'cinco', redIcon, -15.760825, -47.900115),
-					criarMarcador('Estacionamento 2', 'cinco', redIcon, -15.767929, -47.900566),
-					criarMarcador('Estacionamento 3', 'cinco', redIcon, -15.768487, -47.906678),
-					criarMarcador('Estacionamento 4', 'cinco', redIcon, -15.756902, -47.90743),
-					criarMarcador('Estacionamento 5', 'cinco', redIcon, -15.747897, -47.908373),
-					criarMarcador('Estacionamento 6', 'cinco', redIcon, -15.742032, -47.905156) ]);
+					criarMarcador('Estacionamento 1', 'cinco', redIcon,
+							-15.760825, -47.900115),
+					criarMarcador('Estacionamento 2', 'cinco', redIcon,
+							-15.767929, -47.900566),
+					criarMarcador('Estacionamento 3', 'cinco', redIcon,
+							-15.768487, -47.906678),
+					criarMarcador('Estacionamento 4', 'cinco', redIcon,
+							-15.756902, -47.90743),
+					criarMarcador('Estacionamento 5', 'cinco', redIcon,
+							-15.747897, -47.908373),
+					criarMarcador('Estacionamento 6', 'cinco', redIcon,
+							-15.742032, -47.905156) ]);
 		}
 
 		function criarCamadaDeEventos() {
 			return L.layerGroup([
-					criarMarcador('Expobr', 'dois', blueIcon, -15.748352, -47.906017),
-					criarMarcador('Semana Ecológica e Sustentável', 'tres', blueIcon, -15.760144, -47.90402),
-					criarMarcador('Ciclo bsb', 'quatro', blueIcon, -15.746452, -47.903916),
-					criarMarcador('Música e Violão', 'seis', blueIcon, -15.767805, -47.900738) ]);
+					criarMarcador('Expobr', 'dois', blueIcon, -15.748352,
+							-47.906017),
+					criarMarcador('Semana Ecológica e Sustentável', 'tres',
+							blueIcon, -15.760144, -47.90402),
+					criarMarcador('Ciclo bsb', 'quatro', blueIcon, -15.746452,
+							-47.903916),
+					criarMarcador('Música e Violão', 'seis', blueIcon,
+							-15.767805, -47.900738) ]);
 		}
 
 		function criarMarcador(titulo, ele, icone, latitude, longitude) {
-			return L.marker([ latitude, longitude ], {icon : icone})
-			 			.bindPopup('<span data-ele="' + ele + '">' + titulo + '</span>', {closeButton : false, closeOnClick : true})
-						.on('click',
+			return L.marker([ latitude, longitude ], {
+				icon : icone
+			}).bindPopup('<span data-ele="' + ele + '">' + titulo + '</span>',
+					{
+						closeButton : false,
+						closeOnClick : true
+					})
+					.on(
+							'click',
 							function(e) {
 								$('#conteudo').find('div.card').hide();
-								$('#'+ $(e.target.getPopup().getContent()).data('ele')).modal();
+								$(
+										'#'
+												+ $(
+														e.target.getPopup()
+																.getContent())
+														.data('ele')).modal();
 							});
 		}
 	</script>
